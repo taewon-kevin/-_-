@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/%EC%9D%B4%EB%A6%84/Downloads/index_9.html -->
+<!-- saved from url=(0046)file:///C:/Users/twpark/Downloads/index_1.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -10,7 +10,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Goth
 .app{max-width:560px;margin:0 auto}
 .header{text-align:center;margin-bottom:20px}
 .header h1{font-size:21px;font-weight:500;letter-spacing:.04em}
-.header p{font-size:12px;color:#888;margin-top:4px;line-height:1.5}
+.header p{font-size:12px;color:#c04040;margin-top:4px;line-height:1.5}
+
+/* 단계 카드 */
 .steps{display:flex;gap:6px;margin-bottom:18px}
 .step{flex:1;border:1px solid #ddd;border-radius:10px;padding:9px 4px;text-align:center;background:#edecea;transition:all .2s}
 .step.active{border-color:#4a7fd4;background:#eaf1ff}
@@ -20,18 +22,33 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Goth
 .step.done .step-label{color:#3a9e6a}
 .step-name{font-size:12px;font-weight:500}
 .step-tri{font-size:17px;margin-top:3px;min-height:24px;color:#444}
+
+/* 빌드 영역 - 기존 UI */
 .build{display:flex;justify-content:center;align-items:flex-end;gap:20px;margin-bottom:18px;min-height:100px}
 .tri-col{text-align:center}
 .tri-col-label{font-size:11px;color:#aaa;margin-bottom:7px}
 .tri-col-name{font-size:12px;color:#666;margin-top:5px;min-height:17px}
 .center-col{display:flex;flex-direction:column;align-items:center;gap:10px}
 .coins{display:flex;gap:8px}
-.coin{width:42px;height:42px;border-radius:50%;border:1.5px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:19px;background:#edecea;color:#bbb}
+.coin{width:48px;height:48px;border-radius:50%;border:1.5px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;background:#edecea;color:#bbb;text-align:center;line-height:1.2}
 .coin.spin{animation:flip .5s ease-out}
 @keyframes flip{0%{transform:rotateY(0)}50%{transform:rotateY(90deg) scale(.7)}100%{transform:rotateY(0)}}
 .coin.yang{color:#4a7fd4;border-color:#4a7fd4}
 .coin.yin{color:#666;border-color:#999}
 .coin-label{font-size:12px;color:#888;text-align:center;min-height:17px}
+
+/* 주사위 영역 - 기존 UI 아래에 추가 */
+.dice-row{display:flex;justify-content:center;align-items:flex-end;gap:16px;margin-bottom:6px}
+.dice-col{display:flex;flex-direction:column;align-items:center;gap:4px;display:none}
+.dice-face{width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;border:2px solid #ccc;background:#faf8f0;cursor:default;user-select:none}
+.dice-face.spinning{animation:diceShake .3s infinite alternate}
+@keyframes diceShake{0%{transform:rotate(-8deg) scale(1.05)}100%{transform:rotate(8deg) scale(0.95)}}
+.dice-lower .dice-face{border-color:#aac;color:#1a1a1a}
+.dice-upper .dice-face{border-color:#c88;color:#cc1111}
+.dice-eff .dice-face{border-color:#99c;color:#5a1fc8;font-size:16px}
+.dice-sublabel{font-size:10px;color:#aaa;text-align:center}
+
+/* 버튼 */
 .cast-area{text-align:center;margin-bottom:18px}
 .cast-btn{display:inline-block;padding:14px 44px;font-size:16px;font-weight:500;background:#fff;border:1px solid #ccc;border-radius:14px;cursor:pointer;color:#1a1a1a;transition:background .15s;-webkit-tap-highlight-color:transparent}
 .cast-btn:active{background:#edecea;transform:scale(.97)}
@@ -49,34 +66,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Goth
 .badge-amber{background:#fff5e0;color:#a06800}
 .divider{border:none;border-top:1px solid #f0ede8;margin:0}
 
-/* 아코디언 섹션 */
+/* 아코디언 */
 .accordion-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 0;background:none;border:none;border-top:1px solid #f0ede8;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.accordion-btn:first-child{border-top:none}
 .accordion-label{font-size:13px;font-weight:600;color:#e03030}
-.accordion-arrow{font-size:12px;color:#ccc;transition:transform .2s}
-.accordion-btn.open .accordion-arrow{transform:rotate(180deg)}
+.accordion-arrow{font-size:12px;color:#333;transition:transform .2s,color .2s}
+.accordion-btn.open .accordion-arrow{transform:rotate(180deg);color:#ccc}
 .accordion-body{padding-bottom:14px}
-
-/* 컬러 텍스트 */
 .sang-divider{font-size:12px;font-weight:600;color:#e03030;margin:14px 0 8px;padding-top:10px;border-top:1px dashed #f0c0c0}
 .wonmun-han{font-size:14px;font-weight:700;color:#1a5fc8;line-height:1.8;margin-bottom:2px}
 .wonmun-dok{font-size:13px;color:#1a5fc8;line-height:1.6;margin-bottom:3px}
 .wonmun-ko{font-size:14px;font-weight:700;color:#7b2fbe;line-height:1.8;margin-bottom:3px}
 .wonmun-hanja{font-size:12px;color:#2e9e5b;line-height:1.8;margin-bottom:10px}
 .body-text{font-size:14px;color:#333;line-height:1.9;margin-bottom:6px;word-break:keep-all;text-indent:1em}
-
-/* 하단 영역 */
-.src-link{margin-top:4px;padding:12px 0 4px;font-size:12px;color:#bbb;border-top:1px solid #f0ede8}
+.src-link{margin-top:11px;padding:12px 0 4px;font-size:12px;color:#bbb;border-top:1px solid #f0ede8}
 .src-link a{color:#4a7fd4;text-decoration:none}
-.ai-btn{width:100%;margin-top:10px;padding:12px;font-size:14px;font-weight:500;border:1px solid #4a7fd4;border-radius:10px;cursor:pointer;background:#eaf1ff;color:#4a7fd4;-webkit-tap-highlight-color:transparent}
-.ai-btn:active{background:#d0e4ff}
-.ai-result{margin-top:10px;display:none}
-.ai-text-box{font-size:14px;color:#333;line-height:1.9;background:#fafafa;border:1px solid #eee;border-radius:10px;padding:14px}
-.loading{display:flex;align-items:center;gap:8px;padding:13px;background:#f5f3ef;border-radius:10px;font-size:13px;color:#888}
-.dots span{display:inline-block;width:5px;height:5px;border-radius:50%;background:#bbb;animation:dp 1.2s infinite;margin-left:3px}
-.dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
-@keyframes dp{0%,80%,100%{opacity:.3}40%{opacity:1}}
-
 .reset-btn{width:100%;padding:12px;font-size:14px;border:1px solid #ddd;border-radius:10px;cursor:pointer;background:transparent;color:#999;margin-top:4px;-webkit-tap-highlight-color:transparent}
 .reset-btn:active{background:#edecea}
 .hidden{display:none}
@@ -84,25 +87,77 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Goth
 </head>
 <body>
 <div class="app">
-  <div class="header"><h1>☰ 주역 점서</h1><p>마음속 질문을 떠올리고 순서대로 주사위를 던지세요</p></div>
-  <div class="steps">
-    <div class="step active" id="step0"><div class="step-label">1단계</div><div class="step-name">하괘 (下卦)</div><div class="step-tri" id="s0t"></div></div>
-    <div class="step" id="step1"><div class="step-label">2단계</div><div class="step-name">상괘 (上卦)</div><div class="step-tri" id="s1t"></div></div>
-    <div class="step" id="step2"><div class="step-label">3단계</div><div class="step-name">동효 (動爻)</div><div class="step-tri" id="s2t"></div></div>
-  </div>
-  <div class="build">
-    <div class="tri-col"><div class="tri-col-label">하괘</div><svg id="lower-svg" width="48" height="56" viewBox="0 0 48 56"></svg><div class="tri-col-name" id="lower-name"></div></div>
-    <div class="center-col"><div class="coins"><div class="coin" id="c0">?</div><div class="coin" id="c1">?</div><div class="coin" id="c2">?</div></div><div class="coin-label" id="coin-label"></div></div>
-    <div class="tri-col"><div class="tri-col-label">상괘</div><svg id="upper-svg" width="48" height="56" viewBox="0 0 48 56"></svg><div class="tri-col-name" id="upper-name"></div></div>
-  </div>
-  <div class="cast-area">
-    <button class="cast-btn" id="cast-btn" onclick="onCast()">🪙 하괘 던지기</button>
-    <div class="cast-hint" id="cast-hint">3개의 동전으로 하괘(초효~3효)를 구성합니다</div>
+  <div class="header">
+    <h1>☰ 주역 점서</h1>
+    <p>마음속 질문을 떠올리고 순서대로 주사위를 던지세요</p>
   </div>
 
+  <!-- 3단계 카드 -->
+  <div class="steps">
+    <div class="step active" id="step0">
+      <div class="step-label">1단계</div>
+      <div class="step-name">하괘 (下卦)</div>
+      <div class="step-tri" id="s0t"></div>
+    </div>
+    <div class="step" id="step1">
+      <div class="step-label">2단계</div>
+      <div class="step-name">상괘 (上卦)</div>
+      <div class="step-tri" id="s1t"></div>
+    </div>
+    <div class="step" id="step2">
+      <div class="step-label">3단계</div>
+      <div class="step-name">동효 (動爻)</div>
+      <div class="step-tri" id="s2t"></div>
+    </div>
+  </div>
+
+  <!-- 기존 UI: 하괘/상괘 SVG + 코인 -->
+  <div class="build">
+    <div class="tri-col">
+      <div class="tri-col-label">하괘</div>
+      <svg id="lower-svg" width="48" height="56" viewBox="0 0 48 56"></svg>
+      <div class="tri-col-name" id="lower-name"></div>
+    </div>
+    <div class="center-col">
+      <div class="coins">
+        <div class="coin" id="c0">?</div>
+        <div class="coin" id="c1">?</div>
+        <div class="coin" id="c2">?</div>
+      </div>
+      <div class="coin-label" id="coin-label"></div>
+    </div>
+    <div class="tri-col">
+      <div class="tri-col-label">상괘</div>
+      <svg id="upper-svg" width="48" height="56" viewBox="0 0 48 56"></svg>
+      <div class="tri-col-name" id="upper-name"></div>
+    </div>
+  </div>
+
+  <!-- 주사위 3개 (하괘/상괘/동효 순서대로 나타남) -->
+  <div class="dice-row">
+    <div class="dice-col dice-lower" id="dice-lower" style="display:none">
+      <div class="dice-face" id="oct-lower">🎲</div>
+      <div class="dice-sublabel">하괘</div>
+    </div>
+    <div class="dice-col dice-upper" id="dice-upper" style="display:none">
+      <div class="dice-face" id="oct-upper">🎲</div>
+      <div class="dice-sublabel">상괘</div>
+    </div>
+    <div class="dice-col dice-eff" id="dice-eff" style="display:none">
+      <div class="dice-face" id="cube-eff">🎯</div>
+      <div class="dice-sublabel">동효</div>
+    </div>
+  </div>
+
+  <!-- 던지기 버튼 -->
+  <div class="cast-area">
+    <button class="cast-btn" id="cast-btn" onclick="onCast()">🎲 하괘 던지기</button>
+    <div class="cast-hint" id="cast-hint">동전으로 하괘(초효~3효)를 구성합니다</div>
+  </div>
+
+  <!-- 결과 -->
   <div class="hidden" id="result-wrap">
     <div class="result-card">
-      <!-- 괘 헤더 -->
       <div class="hex-header">
         <svg id="hex-svg" width="48" height="90" viewBox="0 0 48 90" style="flex-shrink:0;margin-top:2px"></svg>
         <div>
@@ -114,35 +169,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Goth
           </div>
         </div>
       </div>
-
-      <!-- 아코디언: 괘의 (기본 닫힘) -->
+      <hr class="divider">
       <button class="accordion-btn" id="sec-gwaui-btn" onclick="toggleSection(&#39;sec-gwaui&#39;)">
         <span class="accordion-label">괘의 (卦意)</span>
         <span class="accordion-arrow">▼</span>
       </button>
       <div class="accordion-body" id="sec-gwaui-body" style="display:none"></div>
-
-      <!-- 아코디언: 괘사 (기본 닫힘) -->
       <button class="accordion-btn" id="sec-gwasa-btn" onclick="toggleSection(&#39;sec-gwasa&#39;)">
         <span class="accordion-label">괘사 (卦辭)</span>
         <span class="accordion-arrow">▼</span>
       </button>
       <div class="accordion-body" id="sec-gwasa-body" style="display:none"></div>
-
-      <!-- 아코디언: 효사 (기본 열림) -->
       <button class="accordion-btn open" id="sec-hyosa-btn" onclick="toggleSection(&#39;sec-hyosa&#39;)">
         <span class="accordion-label" id="sec-hyosa-btn-label">효사 및 효상사</span>
         <span class="accordion-arrow">▼</span>
       </button>
       <div class="accordion-body" id="sec-hyosa-body"></div>
-
       <div class="src-link" id="src-link"></div>
     </div>
-
-    <!-- AI 해설 버튼 -->
-    <button class="ai-btn" onclick="loadAI()">✨ AI 현대 해설 보기</button>
-    <div class="ai-result" id="ai-result"></div>
-
     <button class="reset-btn" onclick="resetAll()">↺ 다시 던지기</button>
   </div>
 </div>
@@ -151,169 +195,366 @@ const DB=[{"num": 1, "ko": "중천건", "hanja": "重天乾", "lines": [1, 1, 1,
 const KEYWORDS={"1": "창조", "2": "수용", "3": "시작의 어려움", "4": "배움", "5": "기다림", "6": "분쟁", "7": "통솔", "8": "연대", "9": "소축", "10": "예의", "11": "형통", "12": "막힘", "13": "화합", "14": "풍요", "15": "겸손", "16": "즐거움", "17": "따름", "18": "개혁", "19": "임박", "20": "관찰", "21": "결단", "22": "꾸밈", "23": "쇠퇴", "24": "회귀", "25": "순수", "26": "대축", "27": "양육", "28": "과도", "29": "험난", "30": "광명", "31": "감응", "32": "항구", "33": "은퇴", "34": "대세", "35": "진보", "36": "은인자중", "37": "가정", "38": "어긋남", "39": "난관", "40": "해소", "41": "덜어냄", "42": "더함", "43": "결단", "44": "만남", "45": "모임", "46": "상승", "47": "곤경", "48": "우물", "49": "변혁", "50": "새 질서", "51": "진동", "52": "멈춤", "53": "점진", "54": "귀속", "55": "풍요", "56": "여행", "57": "순종", "58": "기쁨", "59": "흩어짐", "60": "절제", "61": "내면의 믿음", "62": "소심함", "63": "완성", "64": "미완성"};
 
 const TRIGRAMS=[
-  {ko:"건(乾)",sym:"☰",lines:[1,1,1]},{ko:"곤(坤)",sym:"☷",lines:[0,0,0]},
-  {ko:"진(震)",sym:"☳",lines:[1,0,0]},{ko:"손(巽)",sym:"☴",lines:[0,1,1]},
-  {ko:"감(坎)",sym:"☵",lines:[0,1,0]},{ko:"이(離)",sym:"☲",lines:[1,0,1]},
-  {ko:"간(艮)",sym:"☶",lines:[0,0,1]},{ko:"태(兌)",sym:"☱",lines:[1,1,0]},
+  {ko:"건(乾)",sym:"天",lines:[1,1,1]},{ko:"곤(坤)",sym:"地",lines:[0,0,0]},
+  {ko:"진(震)",sym:"雷",lines:[1,0,0]},{ko:"손(巽)",sym:"風",lines:[0,1,1]},
+  {ko:"감(坎)",sym:"水",lines:[0,1,0]},{ko:"이(離)",sym:"火",lines:[1,0,1]},
+  {ko:"간(艮)",sym:"山",lines:[0,0,1]},{ko:"태(兌)",sym:"澤",lines:[1,1,0]},
 ];
 const TMAP={};
-TRIGRAMS.forEach(t=>{TMAP[t.lines.join('')]=t;});
+TRIGRAMS.forEach(function(t){TMAP[t.lines.join('')]=t;});
 
 const EFF_KEYS=['초효','이효','삼효','사효','오효','상효'];
 const EFF_LABELS=['초효(初爻)','이효(二爻)','삼효(三爻)','사효(四爻)','오효(五爻)','상효(上爻)'];
-const BTN_LABELS=['🪙 하괘 던지기','🪙 상괘 던지기','🎯 동효 정하기'];
-const HINTS=['3개의 동전으로 하괘(초효~3효)를 구성합니다','3개의 동전으로 상괘(4효~6효)를 구성합니다','초효~상효 중 하나가 동효(변하는 효)로 결정됩니다'];
+const BTN_LABELS=['🎲 하괘 던지기','🎲 상괘 던지기','🎯 동효 정하기'];
+const HINTS=['동전으로 하괘(초효~3효)를 구성합니다','동전으로 상괘(4효~6효)를 구성합니다','초효~상효 중 하나가 동효(변하는 효)로 결정됩니다'];
+const EFF_HAN=['初','二','三','四','五','上'];
 
 let step=0,lower=null,upper=null,dong=null,aiLoaded=false;
 
-function roll3(){return [0,1,2].map(()=>Math.random()>.5?1:0);}
-function animCoins(lines){[0,1,2].forEach(i=>{const el=document.getElementById('c'+i);el.classList.remove('spin','yang','yin');void el.offsetWidth;el.classList.add('spin',lines[i]?'yang':'yin');el.textContent=lines[i]?'☉':'☽';});}
-function drawTri(svgId,lines){const svg=document.getElementById(svgId);svg.innerHTML='';const W=48,lh=6,gap=9;lines.forEach((v,i)=>{const y=50-i*(lh+gap);if(v===1){const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x','0');r.setAttribute('y',y);r.setAttribute('width',W);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill','#222');svg.appendChild(r);}else{[0,W/2+2].forEach(x=>{const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',W/2-2);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill','#222');svg.appendChild(r);});}});}
-function drawHex(lines,d){const svg=document.getElementById('hex-svg');svg.innerHTML='';const W=48,lh=6,gap=8;lines.forEach((v,i)=>{const y=84-i*(lh+gap);const fill=(i+1===d)?'#c07a00':'#222';if(v===1){const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x','0');r.setAttribute('y',y);r.setAttribute('width',W);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill',fill);svg.appendChild(r);}else{[0,W/2+2].forEach(x=>{const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',W/2-2);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill',fill);svg.appendChild(r);});}});}
-function stepDone(idx,label){const el=document.getElementById('step'+idx);el.classList.remove('active');el.classList.add('done');document.getElementById('s'+idx+'t').textContent=label;}
-function mk(cls,txt){if(!txt||!txt.trim())return null;const d=document.createElement('div');d.className=cls;d.textContent=txt.trim();return d;}
-function ap(c,el){if(el)c.appendChild(el);}
+function roll3(){return [0,1,2].map(function(){return Math.random()>.5?1:0;});}
 
+// ── 삼효 SVG 그리기 ──
+function drawTri(svgId,lines,color){
+  var svg=document.getElementById(svgId);
+  if(!svg)return;
+  svg.innerHTML='';
+  var W=48,lh=6,gap=9;
+  lines.forEach(function(v,i){
+    var y=50-i*(lh+gap);
+    if(v===1){
+      var r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      r.setAttribute('x','0');r.setAttribute('y',y);r.setAttribute('width',W);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill',color||'#222');svg.appendChild(r);
+    }else{
+      [0,W/2+2].forEach(function(x){
+        var r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+        r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',W/2-2);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill',color||'#222');svg.appendChild(r);
+      });
+    }
+  });
+}
+function drawHex(lines,d){
+  var svg=document.getElementById('hex-svg');svg.innerHTML='';
+  var W=48,lh=6,gap=8;
+  lines.forEach(function(v,i){
+    var y=84-i*(lh+gap);
+    var fill=(i+1===d)?'#c07a00':'#222';
+    if(v===1){
+      var r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      r.setAttribute('x','0');r.setAttribute('y',y);r.setAttribute('width',W);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill',fill);svg.appendChild(r);
+    }else{
+      [0,W/2+2].forEach(function(x){
+        var r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+        r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',W/2-2);r.setAttribute('height',lh);r.setAttribute('rx','2');r.setAttribute('fill',fill);svg.appendChild(r);
+      });
+    }
+  });
+}
+
+// ── step 완료 ──
+function stepDone(idx,label){
+  var el=document.getElementById('step'+idx);
+  el.classList.remove('active');el.classList.add('done');
+  document.getElementById('s'+idx+'t').textContent=label;
+}
+
+// ── 정팔면체 주사위 (CSS 3D) ──
+// 8면체를 CSS로 구현: 피라미드 2개를 위아래로 겹침
+var OCT_SYMS=['天','地','雷','風','水','火','山','澤'];
+
+function spinOct(el, targetSym, isUpper, callback){
+  var frames=0, total=40;
+  var syms=OCT_SYMS.slice();
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  shuffle(syms);
+  // 목표 심볼을 맨 앞으로
+  var idx=syms.indexOf(targetSym);
+  if(idx>0){var tmp=syms[0];syms[0]=syms[idx];syms[idx]=tmp;}
+
+  var color=isUpper?'#cc1111':'#1a1a1a';
+
+  function tick(){
+    frames++;
+    var t=frames/total;
+    if(t<0.7){
+      // 빠르게 심볼 교체
+      if(frames%3===0){
+        shuffle(syms);
+        el.textContent=syms[0];
+        el.style.color=color;
+      }
+    } else {
+      // 목표로 수렴
+      el.textContent=targetSym;
+      el.style.color=color;
+    }
+    if(frames<total){
+      setTimeout(tick,30);
+    } else {
+      el.textContent=targetSym;
+      el.style.color=color;
+      callback();
+    }
+  }
+  tick();
+}
+
+// ── 정육면체 주사위 (CSS 3D) ──
+function spinCube(el, targetIdx, callback){
+  var frames=0, total=40;
+  var all=['初','二','三','四','五','上'];
+  var colors=['#cc1111','#5a1fc8','#5a1fc8','#5a1fc8','#5a1fc8','#5a1fc8'];
+
+  function tick(){
+    frames++;
+    var t=frames/total;
+    if(t<0.7){
+      if(frames%3===0){
+        var ri=Math.floor(Math.random()*6);
+        el.textContent=all[ri];
+        el.style.color=colors[ri];
+      }
+    } else {
+      el.textContent=all[targetIdx];
+      el.style.color=colors[targetIdx];
+    }
+    if(frames<total){
+      setTimeout(tick,30);
+    } else {
+      el.textContent=all[targetIdx];
+      el.style.color=colors[targetIdx];
+      callback();
+    }
+  }
+  tick();
+}
+
+// ── 애니메이션 래퍼 ──
+function rollOct(elId, targetSym, isUpper, callback){
+  var el=document.getElementById(elId);
+  if(!el){callback();return;}
+  el.classList.add('spinning');
+  spinOct(el, targetSym, isUpper, function(){
+    el.classList.remove('spinning');
+    callback();
+  });
+}
+
+function rollCubeDice(elId, targetIdx, callback){
+  var el=document.getElementById(elId);
+  if(!el){callback();return;}
+  el.classList.add('spinning');
+  spinCube(el, targetIdx, function(){
+    el.classList.remove('spinning');
+    callback();
+  });
+}
+
+// ── 코인 표시 (기존 UI 유지) ──
+function animCoins(lines){
+  [0,1,2].forEach(function(i){
+    var el=document.getElementById('c'+i);
+    if(!el)return;
+    el.classList.remove('spin','yang','yin');
+    void el.offsetWidth;
+    el.classList.add('spin',lines[i]?'yang':'yin');
+    el.textContent=lines[i]?'양(陽)':'음(陰)';
+  });
+}
+
+function onCast(){
+  if(step===0){
+    lower=roll3();
+    var t=TMAP[lower.join('')];
+    document.getElementById('cast-btn').disabled=true;
+    document.getElementById('coin-label').textContent='굴리는 중...';
+    // 하괘 주사위 표시
+    document.getElementById('dice-lower').style.display='flex';
+    animCoins(lower);
+    rollOct('oct-lower', t?t.sym:'天', false, function(){
+      drawTri('lower-svg', lower, '#1a5fc8');
+      document.getElementById('lower-name').textContent=t?t.ko:'';
+      document.getElementById('coin-label').textContent=lower.map(function(v){return v?'양(陽)':'음(陰)';}).join(' · ');
+      stepDone(0, t?t.sym:'');
+      document.getElementById('step1').classList.add('active');
+      step=1;
+      document.getElementById('cast-btn').disabled=false;
+      document.getElementById('cast-btn').textContent=BTN_LABELS[1];
+      document.getElementById('cast-hint').textContent=HINTS[1];
+    });
+  } else if(step===1){
+    upper=roll3();
+    var t=TMAP[upper.join('')];
+    document.getElementById('cast-btn').disabled=true;
+    document.getElementById('coin-label').textContent='굴리는 중...';
+    // 상괘 주사위 표시
+    document.getElementById('dice-upper').style.display='flex';
+    animCoins(upper);
+    rollOct('oct-upper', t?t.sym:'天', true, function(){
+      drawTri('upper-svg', upper, '#cc1111');
+      document.getElementById('upper-name').textContent=t?t.ko:'';
+      document.getElementById('coin-label').textContent=upper.map(function(v){return v?'양(陽)':'음(陰)';}).join(' · ');
+      stepDone(1, t?t.sym:'');
+      document.getElementById('step2').classList.add('active');
+      step=2;
+      document.getElementById('cast-btn').disabled=false;
+      document.getElementById('cast-btn').textContent=BTN_LABELS[2];
+      document.getElementById('cast-hint').textContent=HINTS[2];
+    });
+  } else if(step===2){
+    dong=Math.floor(Math.random()*6)+1;
+    document.getElementById('cast-btn').disabled=true;
+    document.getElementById('coin-label').textContent='굴리는 중...';
+    // 동효 주사위 표시
+    document.getElementById('dice-eff').style.display='flex';
+    rollCubeDice('cube-eff', dong-1, function(){
+      document.getElementById('coin-label').textContent=EFF_LABELS[dong-1];
+      stepDone(2, EFF_HAN[dong-1]);
+      document.getElementById('cast-hint').textContent='괘가 완성되었습니다';
+      document.getElementById('cast-btn').disabled=true;
+      showResult();
+      step=3;
+    });
+  }
+}
+
+// ── 텍스트 파서 ──
 function parseHanjaItem(s){
-  const m1=s.match(/^([\u4e00-\u9fff·]+)\s*:/);
+  var m1=s.match(/^([\u4e00-\u9fff\u00b7]+)\s*:/);
   if(!m1)return{ok:false,hanja:s,rest:''};
-  const after=s.slice(m1[0].length).trim();
-  const m2=after.match(/^([\uAC00-\uD7A3]{1,6}\s[\uAC00-\uD7A3]{1}(?:\s*·\s*[\uAC00-\uD7A3]{1,6}\s[\uAC00-\uD7A3]{1})*)/);
-  if(m2){return{ok:true,hanja:m1[1]+': '+m2[1],rest:after.slice(m2[0].length).trim()};}
+  var after=s.slice(m1[0].length).trim();
+  var m2=after.match(/^([\uac00-\ud7a3]{1,6}\s[\uac00-\ud7a3]{1}(?:\s*\u00b7\s*[\uac00-\ud7a3]{1,6}\s[\uac00-\ud7a3]{1})*)/);
+  if(m2)return{ok:true,hanja:m1[1]+': '+m2[1],rest:after.slice(m2[0].length).trim()};
   return{ok:false,hanja:s,rest:''};
 }
-
 function parseHanjaBlock(text){
-  const parts=text.split(/\s{2,}/);
-  const items=[];const bodyParts=[];let inBody=false;
-  for(const p of parts){
-    const pt=p.trim();if(inBody){bodyParts.push(pt);continue;}
-    const{ok,hanja,rest}=parseHanjaItem(pt);
-    if(ok){items.push(hanja);if(rest){bodyParts.push(rest);inBody=true;}}
+  var parts=text.split(/\s{2,}/);
+  var items=[],bodyParts=[],inBody=false;
+  for(var pi=0;pi<parts.length;pi++){
+    var pt=parts[pi].trim();
+    if(inBody){bodyParts.push(pt);continue;}
+    var parsed=parseHanjaItem(pt);
+    if(parsed.ok){items.push(parsed.hanja);if(parsed.rest){bodyParts.push(parsed.rest);inBody=true;}}
     else{bodyParts.push(pt);inBody=true;}
   }
-  return{items,rest:bodyParts.join(' ').trim()};
+  return{items:items,rest:bodyParts.join(' ').trim()};
 }
-
 function parseText(raw){
-  const text=raw.replace(/\xa0/g,' ').trim();
-  const out={hanmun:'',dok:'',trans:'',hanja:[],body:''};
-  let rest=text;
-  if(/^[\u4e00-\u9fff]/.test(rest)){const m=rest.match(/^(.+?[니라다오하]\.\s*)/);if(m){out.hanmun=m[1].trim();rest=rest.slice(m[0].length).trim();}}
-  const dokM=rest.match(/^([\uAC00-\uD7A3]{1,8}(?:\s{3,}[\uAC00-\uD7A3]{1,12})+)\s+/);
+  var text=raw.replace(/\xa0/g,' ').trim();
+  var out={hanmun:'',dok:'',trans:'',hanja:[],body:''};
+  var rest=text;
+  if(/^[\u4e00-\u9fff]/.test(rest)){
+    var m=rest.match(/^(.+?[\ub2c8\ub77c\ub2e4\uc624\ud558]\.\s*)/);
+    if(m){out.hanmun=m[1].trim();rest=rest.slice(m[0].length).trim();}
+  }
+  var dokM=rest.match(/^([\uac00-\ud7a3]{1,8}(?:\s{3,}[\uac00-\ud7a3]{1,12})+)\s+/);
   if(dokM&&dokM[1].length<100){out.dok=dokM[1].trim().replace(/\s{3,}/g,'  ');rest=rest.slice(dokM[0].length).trim();}
-  const transM=rest.match(/^([\uAC00-\uD7A3].{4,200}?[다라오]\.\s*)/);
+  var transM=rest.match(/^([\uac00-\ud7a3].{4,200}?[\ub2e4\ub77c\uc624]\.\s*)/);
   if(transM){out.trans=transM[1].trim();rest=rest.slice(transM[0].length).trim();}
-  if(/^[\u4e00-\u9fff·]+\s*:/.test(rest)){const{items,rest:br}=parseHanjaBlock(rest);out.hanja=items;rest=br;}
+  if(/^[\u4e00-\u9fff\u00b7]+\s*:/.test(rest)){var hb=parseHanjaBlock(rest);out.hanja=hb.items;rest=hb.rest;}
   out.body=rest.trim();
   return out;
 }
-
+function mk(cls,txt){
+  if(!txt||!txt.trim())return null;
+  var d=document.createElement('div');d.className=cls;d.textContent=txt.trim();return d;
+}
+function ap(c,el){if(el)c.appendChild(el);}
 function renderBlock(t,container){
-  const r=parseText(t);
+  var r=parseText(t);
   if(r.hanmun)ap(container,mk('wonmun-han',r.hanmun));
   if(r.dok)ap(container,mk('wonmun-dok',r.dok));
   if(r.trans)ap(container,mk('wonmun-ko',r.trans));
   if(r.hanja.length>0)ap(container,mk('wonmun-hanja',r.hanja.join('   ')));
-  if(r.body){const sents=r.body.split(/(?<=[다라오\.。])\s+(?=[\uAC00-\uD7A3A-Z])/);sents.forEach(s=>{ap(container,mk('body-text',s.trim()));});}
+  if(r.body){
+    var sents=r.body.match(/[^.]*[^\ub2e4\ub77c\uc624.]*[\ub2e4\ub77c\uc624.]\s*/g)||[r.body];
+    sents.forEach(function(s){if(s.trim())ap(container,mk('body-text',s.trim()));});
+  }
 }
-
 function renderColorText(raw,container){
-  container.innerHTML='';if(!raw)return;
-  const text=raw.replace(/\xa0/g,' ');
-  const sangIdx=text.indexOf('象曰');
-  const parts=sangIdx>0
+  container.innerHTML='';
+  if(!raw)return;
+  var text=raw.replace(/\xa0/g,' ');
+  var sangIdx=text.indexOf('\u8c61\u66f0');
+  var parts=sangIdx>0
     ?[{sang:false,t:text.slice(0,sangIdx).trim()},{sang:true,t:text.slice(sangIdx).trim()}]
     :[{sang:false,t:text.trim()}];
-  parts.forEach(({sang,t})=>{
-    if(sang){const sep=document.createElement('div');sep.className='sang-divider';sep.textContent='象曰 (효상사)';container.appendChild(sep);}
+  parts.forEach(function(part){
+    var sang=part.sang, t=part.t;
+    if(sang){var sep=document.createElement('div');sep.className='sang-divider';sep.textContent='\u8c61\u66f0 (\ud6a8\uc0c1\uc0ac)';container.appendChild(sep);}
     renderBlock(t,container);
   });
 }
 
-/* 아코디언 토글 */
+// ── 아코디언 ──
 function toggleSection(id){
-  const body=document.getElementById(id+'-body');
-  const btn=document.getElementById(id+'-btn');
-  const isOpen=body.style.display!=='none';
+  var body=document.getElementById(id+'-body');
+  var btn=document.getElementById(id+'-btn');
+  var isOpen=body.style.display!=='none';
   body.style.display=isOpen?'none':'block';
   btn.classList.toggle('open',!isOpen);
 }
 
-function onCast(){
-  if(step===0){lower=roll3();animCoins(lower);drawTri('lower-svg',lower);const t=TMAP[lower.join('')];document.getElementById('lower-name').textContent=t?t.ko:'';document.getElementById('coin-label').textContent=lower.map(v=>v?'양(陽)':'음(陰)').join(' · ');stepDone(0,t?t.sym:'');document.getElementById('step1').classList.add('active');step=1;}
-  else if(step===1){upper=roll3();animCoins(upper);drawTri('upper-svg',upper);const t=TMAP[upper.join('')];document.getElementById('upper-name').textContent=t?t.ko:'';document.getElementById('coin-label').textContent=upper.map(v=>v?'양(陽)':'음(陰)').join(' · ');stepDone(1,t?t.sym:'');document.getElementById('step2').classList.add('active');step=2;}
-  else if(step===2){dong=Math.floor(Math.random()*6)+1;document.getElementById('coin-label').textContent='동효: '+EFF_LABELS[dong-1];[0,1,2].forEach(i=>{const el=document.getElementById('c'+i);el.classList.remove('spin','yang','yin');el.textContent='○';el.style.color='#bbb';});const ci=(dong-1)%3;document.getElementById('c'+ci).textContent='◉';document.getElementById('c'+ci).style.color='#c07a00';stepDone(2,EFF_KEYS[dong-1]);document.getElementById('cast-btn').disabled=true;document.getElementById('cast-hint').textContent='괘가 완성되었습니다';showResult();step=3;}
-  if(step<3){document.getElementById('cast-btn').textContent=BTN_LABELS[step];document.getElementById('cast-hint').textContent=HINTS[step];}
-}
-
+// ── 결과 표시 ──
 function showResult(){
-  const full=[...lower,...upper];
-  const hex=DB.find(h=>h.lines.every((v,i)=>v===full[i]));
+  var full=lower.concat(upper);
+  var hex=DB.find(function(h){return h.lines.every(function(v,i){return v===full[i];});});
   if(!hex){alert('괘를 찾지 못했습니다');return;}
   drawHex(full,dong);
-  document.getElementById('hex-num').textContent=`제 ${hex.num}괘`;
-  document.getElementById('hex-title').textContent=`${hex.ko}(${hex.hanja})`;
+  document.getElementById('hex-num').textContent='제 '+hex.num+'괘';
+  document.getElementById('hex-title').textContent=hex.ko+'('+hex.hanja+')';
   document.getElementById('hex-kw').textContent=KEYWORDS[hex.num]||'';
   document.getElementById('hex-dong').textContent='동효: '+EFF_LABELS[dong-1];
-
-  // 괘의
-  const guayi=document.getElementById('sec-gwaui-body');
+  var guayi=document.getElementById('sec-gwaui-body');
   guayi.innerHTML='';renderColorText(hex.gwaui||'',guayi);
   document.getElementById('sec-gwaui-body').style.display='none';
   document.getElementById('sec-gwaui-btn').classList.remove('open');
-
-  // 괘사
-  const gwasa=document.getElementById('sec-gwasa-body');
+  var gwasa=document.getElementById('sec-gwasa-body');
   gwasa.innerHTML='';renderColorText(hex.gwasa||'',gwasa);
   document.getElementById('sec-gwasa-body').style.display='none';
   document.getElementById('sec-gwasa-btn').classList.remove('open');
-
-  // 효사 (기본 열림)
-  const effKey=EFF_KEYS[dong-1];
+  var effKey=EFF_KEYS[dong-1];
   document.getElementById('sec-hyosa-btn-label').textContent='효사 및 효상사 — '+EFF_LABELS[dong-1];
-  const hyosa=document.getElementById('sec-hyosa-body');
-  hyosa.innerHTML='';renderColorText(hex.hyosa?.[effKey]||'(효사 없음)',hyosa);
+  var hyosa=document.getElementById('sec-hyosa-body');
+  hyosa.innerHTML='';renderColorText((hex.hyosa&&hex.hyosa[effKey])||'(효사 없음)',hyosa);
   document.getElementById('sec-hyosa-body').style.display='block';
   document.getElementById('sec-hyosa-btn').classList.add('open');
-
-  document.getElementById('src-link').innerHTML=`<a href="${hex.url}" target="_blank">원문 보기 →</a>`;
-  document.getElementById('ai-result').style.display='none';
-  document.getElementById('ai-result').innerHTML='';
-  aiLoaded=false;
+  document.getElementById('src-link').innerHTML='<a href="'+hex.url+'" target="_blank">원문 보기 →</a>';
   document.getElementById('result-wrap').classList.remove('hidden');
-}
-
-async function loadAI(){
-  if(aiLoaded)return;
-  const full=[...lower,...upper];
-  const hex=DB.find(h=>h.lines.every((v,i)=>v===full[i]));
-  const effKey=EFF_KEYS[dong-1];
-  const hyosaText=hex?.hyosa?.[effKey]||'';
-  const gwasaText=hex?.gwasa||'';
-  const aiResult=document.getElementById('ai-result');
-  aiResult.style.display='block';
-  aiResult.innerHTML='<div class="loading"><span>AI 현대 해설 불러오는 중</span><span class="dots"><span></span><span></span><span></span></span></div>';
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1024,
-        messages:[{role:'user',content:`주역 제${hex.num}괘 ${hex.ko}(${hex.hanja})이 나왔고, 동효는 ${EFF_LABELS[dong-1]}입니다.\n\n[괘사]\n${gwasaText.slice(0,300)}\n\n[동효 효사]\n${hyosaText.slice(0,400)}\n\n위를 바탕으로 현대적이고 실용적인 해설을 작성해 주세요:\n1. 이 괘가 현재 상황에서 의미하는 바 (2~3문장)\n2. ${EFF_LABELS[dong-1]}이 가리키는 변화와 핵심 메시지 (2~3문장)\n3. 구체적인 행동 조언 (2~3문장)\n친근하고 명확한 어투로 300자 내외로 작성해 주세요.`}]})});
-    const data=await res.json();
-    const text=(data.content||[]).map(b=>b.text||'').join('');
-    aiResult.innerHTML='<div class="ai-text-box">'+text.replace(/\n/g,'<br>')+'</div>';
-    aiLoaded=true;
-  }catch(e){
-    aiResult.innerHTML='<div class="ai-text-box">AI 해설을 불러오는 중 오류가 발생했습니다.</div>';
-  }
 }
 
 function resetAll(){
   step=0;lower=null;upper=null;dong=null;aiLoaded=false;
-  [0,1,2].forEach(i=>{const el=document.getElementById('c'+i);el.classList.remove('spin','yang','yin');el.textContent='?';el.style.color='';});
-  document.getElementById('coin-label').textContent='';document.getElementById('lower-name').textContent='';document.getElementById('upper-name').textContent='';
-  document.getElementById('lower-svg').innerHTML='';document.getElementById('upper-svg').innerHTML='';
-  ['step0','step1','step2'].forEach((id,i)=>{const el=document.getElementById(id);el.classList.remove('active','done');if(i===0)el.classList.add('active');document.getElementById('s'+i+'t').textContent='';});
-  document.getElementById('cast-btn').disabled=false;document.getElementById('cast-btn').textContent=BTN_LABELS[0];document.getElementById('cast-hint').textContent=HINTS[0];
+  // 코인 초기화
+  [0,1,2].forEach(function(i){
+    var el=document.getElementById('c'+i);
+    if(el){el.classList.remove('spin','yang','yin');el.textContent='?';el.style.color='';}
+  });
+  // 주사위 숨기기
+  document.getElementById('dice-lower').style.display='none';
+  document.getElementById('dice-upper').style.display='none';
+  document.getElementById('dice-eff').style.display='none';
+  document.getElementById('oct-lower').textContent='🎲';
+  document.getElementById('oct-lower').style.color='';
+  document.getElementById('oct-upper').textContent='🎲';
+  document.getElementById('oct-upper').style.color='';
+  document.getElementById('cube-eff').textContent='🎯';
+  document.getElementById('cube-eff').style.color='';
+  // SVG 초기화
+  document.getElementById('lower-svg').innerHTML='';
+  document.getElementById('upper-svg').innerHTML='';
+  document.getElementById('lower-name').textContent='';
+  document.getElementById('upper-name').textContent='';
+  document.getElementById('coin-label').textContent='';
+  // step 초기화
+  ['step0','step1','step2'].forEach(function(id,i){
+    var el=document.getElementById(id);
+    el.classList.remove('active','done');
+    if(i===0)el.classList.add('active');
+    document.getElementById('s'+i+'t').textContent='';
+  });
+  document.getElementById('cast-btn').disabled=false;
+  document.getElementById('cast-btn').textContent=BTN_LABELS[0];
+  document.getElementById('cast-hint').textContent=HINTS[0];
   document.getElementById('result-wrap').classList.add('hidden');
 }
 
